@@ -23,7 +23,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ closeModal }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validar que los campos no estén vacíos
+   
     if (!form.codigo || !form.nombre || !form.descripcion || !form.cantidad || !form.creacion) {
       Swal.fire({
         title: "Campos requeridos",
@@ -40,7 +40,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ closeModal }) => {
       cantidad: Number(form.cantidad),
     });
 
-    // Mostrar alerta de éxito
+   
     Swal.fire({
       title: "¡Producto agregado!",
       text: `El producto "${form.nombre}" ha sido guardado correctamente.`,
@@ -49,7 +49,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ closeModal }) => {
     });
 
     setForm({ codigo: "", nombre: "", descripcion: "", cantidad: "", creacion: "" });
-    closeModal(); // Cierra el modal después de agregar el producto
+    closeModal(); 
   };
 
   return (

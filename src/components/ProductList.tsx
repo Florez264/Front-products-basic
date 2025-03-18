@@ -10,26 +10,26 @@ const ProductList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
-  // Filtrar productos por búsqueda
+
   const filteredProducts = products.filter(
     (product) =>
       product.nombre.toLowerCase().includes(searchQuery.toLowerCase()) ||
       product.descripcion.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // Ordenar productos según el campo seleccionado
+ 
   const sortedProducts = [...filteredProducts].sort((a, b) =>
     a[sortKey] > b[sortKey] ? 1 : -1
   );
 
-  // Paginación: obtener productos de la página actual
+  
   const totalPages = Math.ceil(sortedProducts.length / itemsPerPage);
   const paginatedProducts = sortedProducts.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
 
-  // Confirmar eliminación con SweetAlert2
+ 
   const confirmDelete = (codigo: number) => {
     Swal.fire({
       title: "¿Estás seguro?",
